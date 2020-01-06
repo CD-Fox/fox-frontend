@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  fox-web:
+    build: .
+    container_name: 'fox-web'
+    ports:
+      - 8080:8080
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
