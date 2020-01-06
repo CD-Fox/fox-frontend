@@ -9,3 +9,4 @@ RUN yarn install --prod \
 FROM nginx:1.17.6-alpine
 
 COPY --from=builder /app/web/build /var/web/dist
+COPY --from=builder /app/web/nginx.conf /etc/nginx/conf.d/default.conf
