@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fox-front
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fox
+  template:
+    metadata:
+      labels:
+        app: fox
+    spec:
+      containers:
+        - name: fox-front
+          image: fox-front
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 8080
