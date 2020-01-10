@@ -2,7 +2,7 @@ apiVersion: skaffold/v1beta11
 kind: Config
 build:
   artifacts:
-  - image: kiss96803/fox-frontend
+  - image: cd-fox/fox-frontend
     context: .
     docker:
       network: host
