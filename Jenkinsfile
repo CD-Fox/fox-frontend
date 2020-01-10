@@ -3,10 +3,10 @@ pipeline {
     label "jenkins-nodejs"
   }
   environment {
-    ORG = 'kiss96803'
+    ORG = 'cd-fox'
     APP_NAME = 'fox-frontend'
     CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
-    DOCKER_REGISTRY_ORG = 'kiss96803'
+    DOCKER_REGISTRY_ORG = 'cd-fox'
   }
   stages {
     stage('CI Build and push snapshot') {
