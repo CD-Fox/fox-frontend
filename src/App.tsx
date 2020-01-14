@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 const App: React.FC = () => {
+
+  const [txt, setTxt] = useState<string>('')
+
+  useEffect(() => {
+    async function fetchData() {
+      const rep = await fetch('/api/hello')
+      const txt = await rep.text()
+
+      console.log(txt)
+      setTxt(txt)
+    }
+    fetchData();
+  }, [])
+
+  
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,8 +32,9 @@ const App: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn @React
         </a>
+        {txt}
       </header>
     </div>
   );
